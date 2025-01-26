@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>star1_example</name>
+  <version>1.0.0</version>
+  <description>Metapackage for star1_example related packages</description>
+  <maintainer email="zhenjie.liang@robotera.com">wyndham</maintainer>
+
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>simple_trajectory_server</exec_depend>
+  <exec_depend>xbot_common_interfaces</exec_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
