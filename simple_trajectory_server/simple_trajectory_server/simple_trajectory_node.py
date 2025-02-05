@@ -3,7 +3,7 @@ import time
 
 from xbot_common_interfaces.action import SimpleTrajectory
 from xbot_common_interfaces.msg import HybridJointCommand
-from sensor_msgs.msg import JointState
+from sensor_msgs.msg import JointState,Imu
 
 import rclpy
 from rclpy.action import ActionServer, CancelResponse, GoalResponse
@@ -39,6 +39,12 @@ class MinimalActionServer(Node):
             10)
         self.subscription  # prevent unused variable warning
 
+        self.imu_sub = self.create_subscription(
+        Imu,
+        '/imu_broadcaster/imu',
+        self.imu_cb,
+        10)
+
         # Declare parameters and get their values
         self.declare_parameters(
             namespace='',
@@ -62,6 +68,10 @@ class MinimalActionServer(Node):
         self.hybrid_cmd_pub_ = self.create_publisher(HybridJointCommand, f'{self.controller_topic_name}', 1)
         self.current_positions = {}  
         self.target_positions = {name: 0.0 for name in self.joint_names}   
+
+    def imu_cb(self,msg):
+        #TODO: implement imu callback
+        pass
 
     def joint_states_cb(self,msg):
         with self._state_lock:
