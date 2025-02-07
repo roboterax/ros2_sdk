@@ -1,0 +1,3 @@
+rl_controller_node:
+  ros__parameters:
+    policy_file: "policy_walk_open3.pt"
