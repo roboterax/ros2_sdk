@@ -112,12 +112,16 @@ To modify the system architecture:
      ros__parameters:
        policy_file: "your_policy.pt"
    ```
+3. Rebuid the project
+   ```bash
+   colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+   ```
 
 ## Usage
 
 Launch the controller:
 ```bash
-# cd /rl_controller
+# cd star1_example
 source install/setup.bash
 ros2 launch rl_controller rl_controller.launch.py
 ```
