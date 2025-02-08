@@ -43,7 +43,9 @@ This package uses a TorchScript neural network policy to generate precise motor 
     ros2 service call /dynamic_launch xbot_common_interfaces/srv/DynamicLaunch \
     "app_name: '' 
     sync_control: false 
-    launch_mode: 'pd'" ## replace `pd` with `no_hand_pd` if no hand on robot
+    launch_mode: 'pd'"
+
+    ## replace `pd` with `no_hand_pd` if no hand on robot
     ```
 3. Switch robot to ready state
     ```bash
