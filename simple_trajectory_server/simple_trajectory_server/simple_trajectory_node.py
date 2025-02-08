@@ -62,7 +62,7 @@ class MinimalActionServer(Node):
         self.duration = 5.0
         self.kp = self.get_parameter('kp').value
         self.kd = self.get_parameter('kd').value
-        self.amplitude = 0.02
+        self.amplitude = 0.04
         self.frequency = 0.1
         self.controller_topic_name = self.get_parameter('controller_topic_name').value
         self.hybrid_cmd_pub_ = self.create_publisher(HybridJointCommand, f'{self.controller_topic_name}', 1)
