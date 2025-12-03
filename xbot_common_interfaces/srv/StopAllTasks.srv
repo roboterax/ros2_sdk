@@ -1,4 +1,3 @@
-string controller_name
 ---
 bool success
 string message
