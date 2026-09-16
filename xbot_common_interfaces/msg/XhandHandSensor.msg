@@ -1,10 +1,11 @@
-std_msgs/Header header
+uint8 sensor_id  #
+int32 calc_force_fx
+int32 calc_force_fy
+uint32 calc_force_fz
 
-string hand_type  #
-
-int8[] fx
-int8[] fy
-int8[] fz
+int32[] raw_force_fx
+int32[] raw_force_fy
+uint32[] raw_force_fz
 
 uint8[] temperature  #
 uint8   calc_temperature #

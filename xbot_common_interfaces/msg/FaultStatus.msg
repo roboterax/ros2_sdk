@@ -24,7 +24,8 @@ string hardware_id            #
 string joint_name             # 所属关节
 
 # 分类信息
-string fault_type             # 故障类型 (battery, joint, encoder, imu, realsense, microphone, nuc, orin, algorithm, software等)
+string fault_type             # 故障类型（中文模块名）
+string fault_type_en          # 故障类型英文 (battery, joint, encoder, imu, realsense, microphone, nuc, orin, algorithm, software等)
 string fault_module           # 所属模块
 
 # 描述信息

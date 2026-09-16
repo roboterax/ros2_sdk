@@ -10,7 +10,9 @@ int32 id             # 当 mode==0 时使用, id需要大于0
 string path          # 当 mode==1 时使用
 string item          # 当 mode==2 时使用；例如： {"file_name": audio_name, "text": audio_text}
 string file_name     # 当 mode==3 时使用
+string channel       # 不传默认 channel1 可选 default / channel1 / channel2 / channel3
 int32 timeout        # 播放超时时间（单位秒）
+string version       # 不传默认 v1 可选 v1 / v2
 ---
 # Result
 bool success

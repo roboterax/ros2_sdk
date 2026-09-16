@@ -16,15 +16,16 @@ find_package(diagnostic_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
-file(GLOB msg_files RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "msg/*.msg")
-file(GLOB srv_files RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "srv/*.srv")
-file(GLOB action_files RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "action/*.action")
-rosidl_generate_interfaces(${PROJECT_NAME}
+file(GLOB msg_files CONFIGURE_DEPENDS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "msg/*.msg")
+file(GLOB srv_files CONFIGURE_DEPENDS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "srv/*.srv")
+file(GLOB action_files CONFIGURE_DEPENDS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "action/*.action")
+rosidl_generate_interfaces(
+  ${PROJECT_NAME}
   ${msg_files}
   ${srv_files}
   ${action_files}
   DEPENDENCIES builtin_interfaces std_msgs geometry_msgs diagnostic_msgs
- )
+)
 ament_export_dependencies(rosidl_default_runtime)
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
