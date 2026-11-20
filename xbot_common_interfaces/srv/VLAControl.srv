@@ -1,0 +1,14 @@
+# ===== Request =====
+uint8 command
+
+uint8 START   = 1
+uint8 PAUSE   = 2
+uint8 RESUME  = 3
+uint8 STOP    = 4
+uint8 RESET   = 5
+
+---
+# ===== Response =====
+bool accepted
+VLAState current_state
+string message
